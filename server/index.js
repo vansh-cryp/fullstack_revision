@@ -15,7 +15,8 @@ app.use(cors(
 
 app.get("/api/message", (req, res) => {res.json({ message: "Hello from Vansh's server!" })});
 
-
-app.listen(PORT, () => {
+// this is used to bind the port for our server with docker container
+app.listen(PORT,"0.0.0.0", () => {
     console.log(`Server listening on ${PORT}`);
 });
+//0.0.0.0 means all the ip addresses can access this server
